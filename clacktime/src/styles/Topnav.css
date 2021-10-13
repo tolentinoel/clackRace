@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat&display=swap');
 
 .topnavDiv{
-    background-color: rgb(232, 236, 236);
+    background-color: rgb(245, 249, 249);
     position: absolute;
     top: 0;
     width: 100%;
@@ -12,7 +13,6 @@
     align-items: center;
 }
 
-
 .topnavLogo {
     height: 7vmin;
     pointer-events: none;
@@ -21,18 +21,25 @@
 
 }
 
-  @media (prefers-reduced-motion: no-preference) {
-    .topnavLogo  {
-      animation: pulse 400ms linear 40ms infinite alternate;
-    }
-  }
+.topnavTextHeader {
+    font-family: 'Bungee', cursive;
+    background:linear-gradient(180deg, rgba(21,175,228,1) 24%, rgba(134,70,252,1) 86%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
+@media (prefers-reduced-motion: no-preference) {
+.topnavLogo  {
+    animation: pulse 400ms linear 40ms infinite alternate;
+    }
+}
 
-  @keyframes pulse {
-    from {
-      transform:translate(5%, -10%);
-    }
-    to {
-      transform: translate(5%, -5%);
-    }
-  }
+@keyframes pulse {
+from {
+    transform:translate(5%, -10%);
+}
+to {
+    transform: translate(5%, -5%);
+}
+}
