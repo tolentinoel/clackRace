@@ -1,4 +1,4 @@
-# clackRace
+# clackTime
 
 Currently on development phase..
 
