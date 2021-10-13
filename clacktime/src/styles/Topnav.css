@@ -1,0 +1,38 @@
+
+.topnavDiv{
+    background-color: rgb(232, 236, 236);
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.topnavHeader{
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+
+.topnavLogo {
+    height: 7vmin;
+    pointer-events: none;
+    float: left;
+    padding: 7px 20px;
+
+}
+
+  @media (prefers-reduced-motion: no-preference) {
+    .topnavLogo  {
+      animation: pulse 400ms linear 40ms infinite alternate;
+    }
+  }
+
+
+  @keyframes pulse {
+    from {
+      transform:translate(5%, -10%);
+    }
+    to {
+      transform: translate(5%, -5%);
+    }
+  }
