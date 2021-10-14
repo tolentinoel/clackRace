@@ -1,6 +1,10 @@
 .App {
   text-align: center;
   height: 100vh;
+  background: rgb(197,169,255);
+  background: linear-gradient(45deg, rgb(206 239 246) 0%, rgba(255,255,255,1) 50%, rgb(209 218 255) 100%);
+  display: flex;
+  flex-direction: column;
 }
 
 
