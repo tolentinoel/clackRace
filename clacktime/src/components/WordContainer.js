@@ -4,14 +4,25 @@ import '../styles/WordContainer.css';
 class WordContainer extends Component {
 
     state = {
-        text: ""
+        text: "",
+        wordPool: []
     }
 
     handleChange = (e) => {
-        this.setState({[e.target.name]: e.target.value})
+
+        this.setState({[e.target.name]: e.target.value,})
+
+        if (e.target.value.includes(" ")) {
+            this.setState({
+                text: "",
+                wordPool: `${this.state.wordPool +" "+ this.state.text}`
+            })
+
+        }
     }
 
     render() {
+        console.log(this.state.wordPool )
         return (
             <div className="wordCDiv">
                 <div id="window">
