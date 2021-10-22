@@ -7,36 +7,36 @@ class WordContainer extends Component {
         ipsum: "Bacon ipsum dolor amet jowl ground round tri-tip hamburger capicola kielbasa prosciutto. Ham sirloin filet mignon, ground round brisket ball tip bresaola shoulder venison. Filet mignon drumstick prosciutto, ground round beef ribs tenderloin bresaola chuck bacon ham boudin rump pancetta. Ground round t-bone turkey shank jowl turducken cow salami porchetta leberkas tenderloin meatloaf. Tongue pig swine pork, meatball jerky short loin salami turducken pork loin burgdoggen short ribs chislic filet mignon.",
         text: "",
         wordPool: [],
-        score: 0
+        score: 0,
+        wordCounter: 0
     }
 
     handleChange = (e) => {
 
         this.setState({[e.target.name]: e.target.value})
-
+        let counter = this.state.wordCounter + 1
         // if text has space, set state
-        if (e.target.value.includes(" ") && this.state.ipsum.split(" ")[this.state.score] === this.state.text) {
+
+        if (e.target.value.includes(" ") && this.state.ipsum.split(" ")[this.state.wordCounter] === this.state.text) {
             let correct = this.state.score + 1
             this.setState({
                 text: "",
                 wordPool: `${this.state.wordPool +" "+ this.state.text}`,
-                score: correct
+                score: correct,
+                wordCounter: counter
+            })
+        } else if (e.target.value.includes(" ") && this.state.ipsum.split(" ")[this.state.wordCounter] !== this.state.text){
+            console.log("ENGGGGKK!!!")
+            this.setState({
+                wordCounter: counter,
+                text: "",
+                wordPool: `${this.state.wordPool +" "+ this.state.text}`
+
             })
         }
     }
 
 
-    // renderScore = () => {
-    //     debugger
-    //     let str = this.state.wordPool
-
-    //     if (this.state.text === str.split(" ")[str.length-1]) {
-    //         let num = this.state.score + 1
-    //         this.setState({
-    //             score: num
-    //         })
-    //     }
-    // }
 
     render() {
 
