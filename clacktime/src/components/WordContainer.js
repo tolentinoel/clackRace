@@ -12,42 +12,39 @@ class WordContainer extends Component {
 
     handleChange = (e) => {
 
-        this.setState({[e.target.name]: e.target.value,})
+        this.setState({[e.target.name]: e.target.value})
 
         // if text has space, set state
-        if (e.target.value.includes(" ")) {
-            debugger
-            if (e.target.value === this.state.wordPool[this.state.wordPool.length-1]){
-
-                this.setState({
-                    text: "",
-                    wordPool: `${this.state.wordPool +" "+ this.state.text}`
-                })
-            }
-
-        }
-    }
-
-
-    renderScore = () => {
-        debugger
-        let str = this.state.wordPool
-        
-        if (this.state.text === str.split(" ")[str.length-1]) {
-            let num = this.state.score + 1
+        if (e.target.value.includes(" ") && this.state.ipsum.split(" ")[this.state.score] === this.state.text) {
+            let correct = this.state.score + 1
             this.setState({
-                score: num
+                text: "",
+                wordPool: `${this.state.wordPool +" "+ this.state.text}`,
+                score: correct
             })
         }
     }
 
+
+    // renderScore = () => {
+    //     debugger
+    //     let str = this.state.wordPool
+
+    //     if (this.state.text === str.split(" ")[str.length-1]) {
+    //         let num = this.state.score + 1
+    //         this.setState({
+    //             score: num
+    //         })
+    //     }
+    // }
+
     render() {
-        
-     
+
+
         return (
             <div className="wordCDiv">
                 <p>{this.state.wordPool}</p>
-              
+
                 <p>{this.state.score}</p>
                 <div id="window">
                     <p>{this.state.ipsum}</p>
